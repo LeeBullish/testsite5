@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="styles.css">
     <title>Hash Pimps</title>
     <style>
+         #roadmap ul ul li:hover::after, #roadmap ul ul li.show-description::after {
+        opacity: 1;
+        visibility: visible;
+    }
+   #roadmap ul ul li::after {
+        /* ... */
+        opacity: 0;
+        visibility: hidden; /* Add this line */
+        transition: opacity 0.3s ease-in, visibility 0.3s ease-in; /* Add visibility */
+    }
+
+    /* Add the new class to control visibility on mobile devices */
+    #roadmap ul ul li.show-description::after {
+        opacity: 1;
+        visibility: visible;
+    }
+
           /* ... */
     #roadmap ul ul li {
         color: #ffffff;
@@ -154,5 +171,16 @@
         <img src="pimpinh aint easy.jpg" alt="A description of the image" width="300">
         <p>&copy; 2023 Hash Pimps. All rights reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const roadmapItems = document.querySelectorAll('#roadmap ul ul li');
+    
+            roadmapItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.toggle('show-description');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
