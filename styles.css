@@ -1,3 +1,4 @@
+
 h1 {
     text-align: center;
     color: #000000;
@@ -68,8 +69,22 @@ nav a {
 }
 
 nav a:hover {
-    color: #e244a1;
-}
+    
+        text-align: center;
+        color: #000000;
+        margin-bottom: 20px;
+        animation: glow 1s ease-in-out infinite alternate;
+    }
+    
+    @keyframes glow {
+        from {
+            text-shadow: 0 0 3px #ff69b4, 0 0 5px #ff69b4, 0 0 10px #ff69b4, 0 0 15px #ff69b4;
+        }
+        to {
+            text-shadow: 0 0 10px #ff69b4, 0 0 15px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+        }
+    }
+
 
 h1, h2 {
     margin-bottom: 20px;
